@@ -14,9 +14,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using static ChiayinYanping_InClass4.Animals;
-
 namespace ChiayinYanping_InClass4
 {
     public partial class MainForm : Form
@@ -40,8 +37,14 @@ namespace ChiayinYanping_InClass4
         private void btnSpeak_Click(object sender, EventArgs e)
         {
             // Get the selected animal from the ListBox and call its Speak method
-            Animal selectedAnimal = listBoxAnimals.SelectedItem as Animal;
-            selectedAnimal?.Speak();
+            if(listBoxAnimals.SelectedItem is Animal animas)
+            {
+                animas.Speak();
+            }
+            else
+            {
+                labmessage.Text = "Please select animals";
+            }
         }
     }
 }

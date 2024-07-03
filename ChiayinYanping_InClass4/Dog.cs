@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace ChiayinYanping_InClass4
 {
     // Define the Dog class which implements the Animal interface
-    internal class Dog : Animals
+    public class Dog : Animal
     {
         // Property to store the dog's name
-        public string Name { get; private set; }
+        public string Name { get;  set; }
 
         // Constructor to initialize the dog's name
         public Dog(string name)
@@ -21,9 +21,7 @@ namespace ChiayinYanping_InClass4
         // Implement the Speak method to play the dog barking sound
         public void Speak()
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = @"C:\Users\Chiayin\source\repos\ChiayinYanping_InClass4\SoundFiles\dog_bark.wav";
-            player.Play();
+            new CommonConfig().getFilesPath("dog_bark.wav");
         }
 
         // Override the ToString method to return the dog's name with a dog emoji
